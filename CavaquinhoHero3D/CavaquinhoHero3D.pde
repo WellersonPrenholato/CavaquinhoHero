@@ -14,9 +14,10 @@ void setup(){
 void draw(){
   background(0);
   
-  //int r = (int)random(30, 50);
+  int r = (int)random(30, 50);
   
-  camera(width/2.0, height/2.0-320+r, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  //camera(width/2.0, height/2.0-320+r, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  camera(width/2, height/2-300, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
   //camera(mouseX/2, mouseY/2, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
  
   //rotateX(PI*((float)mouseY/(width)));
@@ -62,9 +63,10 @@ void draw(){
   fill(0);
   box(100,20,20);
   popMatrix();
-  
-  
- 
+   
+   
+   print("X: ", mouseX);
+   print("Y: ", mouseY);
   /*
   pushMatrix();
   translate(width/2-148, height/2-123,380);   //As peças do jogo se movem incrementando o valor em z
@@ -113,17 +115,22 @@ void draw(){
     //ta.display();
     //ta.move();
     
-    if (key=='d'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150)&&keyPressed) {  //d
+    if (key=='a'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150)&&keyPressed) {  //d
+      
       ta.gone=true;
-      System.out.println("apertei d: ");
+      /*print("X: ", ta.location.x);
+      print("\n");
+      print("Y: ", ta.location.y);
+      print("\n");
+      print("Z: ", ta.location.z);*/
     }
-    if (key=='f'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+105)&&keyPressed) {//f
+    if (key=='s'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+105)&&keyPressed) {//f
       ta.gone=true;
     }
-    if (key=='j'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+210)&&keyPressed) {//j
+    if (key=='d'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+210)&&keyPressed) {//j
       ta.gone=true;
     }
-    if (key=='k'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+315)&&keyPressed) {//k
+    if (key=='f'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+315)&&keyPressed) {//k
       ta.gone=true;
     }    
     
@@ -143,33 +150,4 @@ void draw(){
   textAlign(CENTER);
   textSize(100);
   text(score, 200, 200);
-}
-
-
-class tiles {
-  PVector location;
-  Boolean gone=false;
-
-  tiles(int i) {
-    location = new PVector(i*105, 0);
-  }
-
-  void run() {
-    display();
-    move();
-  }
-
-  void display() {
-    pushMatrix();                                                        //As notas nascem aqui
-    translate(width/2-150+location.x, height/2-103,-550+location.z);
-    stroke(255);
-    noFill();
-    sphere(40);
-    popMatrix();
-     
-  }
-
-  void move() {
-    location.z+=8;                   //note speed, changing this will up the difficulity, putting it too high will make 
-  }                                  //it literally impossible
 }
