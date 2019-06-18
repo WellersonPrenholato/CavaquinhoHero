@@ -54,7 +54,7 @@ void draw() {
       if (ta.gone==true) {
         score+=ta.location.y>530?30:ta.location.y>480?20:10;
         nota.remove(i);
-        image(fogo, ta.location.x,ta.location.y, 100, 100);
+          image(fogo, ta.location.x,ta.location.y, 100, 100);
       }
   }
   

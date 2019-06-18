@@ -4,7 +4,7 @@ PImage img;
 
 
 void setup(){
-   size(1500,610, P3D); 
+   size(1200,610, P3D); 
    img = loadImage("pericles.jpg");
    //background(img);
 }
@@ -17,20 +17,23 @@ void draw(){
   
   translate(width/2-150, height/2-100,0);
   
-  stroke(255);
+  //stroke(255);
   fill(0,0,156);
   box(100,20,1400);
   translate(105,0,0);
-  stroke(255);
+  
+  //stroke(255);
   fill(255,0,0);
   box(100,20,1400);
   translate(105,0,0);
-  stroke(255);
+  
+  //stroke(255);
   fill(0,255,0);
   box(100,20,1400);
   translate(105,0,0);
-  stroke(255);
-  fill(255,255,0);
+  
+  //stroke(255);
+  fill(255,100,100);
   box(100,20,1400);
   popMatrix();
  
@@ -81,17 +84,12 @@ void draw(){
     ta.display();
     ta.move();
     
-    
-    
     if (ta.location.z>1400) {
       tile.remove(i);
       score=0;
     }
 
     }
-  
-    
-
 }
 
 
@@ -119,6 +117,6 @@ class tiles {
   }
 
   void move() {
-    location.z+=10;                   //note speed, changing this will up the difficulity, putting it too high will make 
+    location.z+=5;                   //note speed, changing this will up the difficulity, putting it too high will make 
   }                                  //it literally impossible
 }
