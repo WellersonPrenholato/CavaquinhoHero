@@ -1,14 +1,14 @@
 ArrayList tile = new ArrayList();
 int score=0;
-//PImage img;
-
+PImage img;
+PShape nota;
 
 void setup(){
    size(1500,610, P3D); 
-   surface.setResizable(true); 
-   //img = loadImage("pericles.jpg");
-   //background(img);
-   
+   noStroke();
+   img = loadImage("metal2.jpg");
+   nota = createShape(SPHERE, 40); 
+   nota.setTexture(img);
 }
 
 void draw(){
@@ -54,7 +54,7 @@ void draw(){
   fill(0);
   box(100,20,20);
   translate(105,0,0);
-  stroke(0);
+  stroke(255);
   fill(0);
   //fill(255,255,255);
   box(100,20,20);
@@ -65,8 +65,8 @@ void draw(){
   popMatrix();
    
    
-   print("X: ", mouseX);
-   print("Y: ", mouseY);
+   //print("X: ", mouseX);
+   //print("Y: ", mouseY);
   /*
   pushMatrix();
   translate(width/2-148, height/2-123,380);   //As peças do jogo se movem incrementando o valor em z
@@ -115,28 +115,23 @@ void draw(){
     //ta.display();
     //ta.move();
     
-    if (key=='a'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150)&&keyPressed) {  //d
+    if (key=='d'&&ta.location.x==0.0&&ta.location.z>900.0&&ta.location.z<990.0&&keyPressed) {  //d
       
       ta.gone=true;
-      /*print("X: ", ta.location.x);
-      print("\n");
-      print("Y: ", ta.location.y);
-      print("\n");
-      print("Z: ", ta.location.z);*/
     }
-    if (key=='s'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+105)&&keyPressed) {//f
+    if (key=='f'&&ta.location.x==105.0&&ta.location.z>900.0&&ta.location.z<990.0&&keyPressed) {//f
       ta.gone=true;
     }
-    if (key=='d'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+210)&&keyPressed) {//j
+    if (key=='j'&&ta.location.x==210.0&&ta.location.z>900.0&&ta.location.z<990.0&&keyPressed) {//j
       ta.gone=true;
     }
-    if (key=='f'&&ta.location.z>300&&ta.location.y>(height/2-123)&&ta.location.x==(width/2-150+315)&&keyPressed) {//k
+    if (key=='k'&&ta.location.x==315.0&&ta.location.z>900.0&&ta.location.z<990.0&&keyPressed) {//k
       ta.gone=true;
     }    
     
     if (ta.location.z>1400) {
+      score-=1;
       tile.remove(i);
-      //score+=';
     }
     if (ta.gone==true) {
       score+=1;
