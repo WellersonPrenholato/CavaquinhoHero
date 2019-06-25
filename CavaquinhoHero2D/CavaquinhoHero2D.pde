@@ -1,10 +1,12 @@
 ArrayList nota = new ArrayList();
 int score=0;
 PImage fogo; 
+int recorde=0;
 
 void setup() {
-  size(400, 600);
+  size(600, 600);
   fogo = loadImage("fogo.png");
+   
 }
 
 void draw() {
@@ -32,17 +34,17 @@ void draw() {
       ta.display();
       ta.move();
     
-      if (key=='a' && ta.location.y>430 && ta.location.x==0.0 && keyPressed) {  //a
+      if ((key=='a'|| key=='A') && ta.location.y>430 && ta.location.x==0.0 && keyPressed) {  //a
         ta.gone=true; 
       }
-      if (key=='s' && ta.location.y>430 && ta.location.x==100.0 && keyPressed) {//s
+      if ((key=='s'|| key=='S') && ta.location.y>430 && ta.location.x==100.0 && keyPressed) {//s
         ta.gone=true;
         //image(fogo, ta.location.x,ta.location.y, 100, 100);
       }
-      if (key=='d'&& ta.location.y>430 && ta.location.x==200.0 && keyPressed) {//d
+      if ((key=='d'|| key=='D') && ta.location.y>430 && ta.location.x==200.0 && keyPressed) {//d
         ta.gone=true;
       }
-      if (key=='f' && ta.location.y>430 && ta.location.x==300.0 && keyPressed) {//f
+      if ((key=='f'|| key=='F') && ta.location.y>430 && ta.location.x==300.0 && keyPressed) {//f
         ta.gone=true;
       }
       
@@ -54,12 +56,26 @@ void draw() {
       if (ta.gone==true) {
         score+=ta.location.y>530?30:ta.location.y>480?20:10;
         nota.remove(i);
-          image(fogo, ta.location.x,ta.location.y, 100, 100);
+        //image(fogo, ta.location.x,ta.location.y, 100, 100);
       }
   }
   
   fill(#0000aa);
   textAlign(CENTER);
+  textSize(24);
+  text("Cavaquinho Hero ",490, 30);
+  textSize(20);
+  text("PONTUAÇÃO: ",500, 100);
   textSize(50);
-  text(score, 200, 530);
+  text(score, 500, 150);
+  
+  textSize(20);
+  text("Recorde: ",500, 250);
+
+  if(score > recorde){
+    recorde = score;
+  }
+  textSize(50);
+  text(recorde, 500, 300);
+  
 }
