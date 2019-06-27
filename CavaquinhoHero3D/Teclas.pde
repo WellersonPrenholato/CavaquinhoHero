@@ -24,6 +24,6 @@ class tiles {
   }
 
   void move() {
-    location.z+=5;                   //note speed, changing this will up the difficulity, putting it too high will make 
+    location.z+=8;                   //note speed, changing this will up the difficulity, putting it too high will make 
   }                                  //it literally impossible
 }
