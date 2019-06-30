@@ -3,8 +3,9 @@ class Notas {
   Boolean gone=false;
 
   Notas(int i) {
-    location = new PVector(i*100,0); //Localização de onde vai nascer a nota
-  }
+    location = new PVector((i*100)+190,0); //Localização de onde vai nascer a nota
+    //println(i);  
+}
 
   void run() {
     display();
@@ -12,7 +13,8 @@ class Notas {
   }
 
   void display() {
-    fill(location.x==0?#00aaaa:location.x==100?#00aa00:location.x==200?#aaaa00:#aa00aa); //Pinta as notas
+    fill(location.x==190?#00aaaa:location.x==290?#00aa00:location.x==390?#ffd700:#aa00aa); //Pinta as notas
+
     rect(location.x, location.y, 100, 50, 40);
     //image(fogo, location.x,location.y, 100, 100);
   }
