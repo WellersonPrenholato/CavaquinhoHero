@@ -28,10 +28,10 @@ void setup(){
    // LISTA DE MÚSICAS
     //musica = new SoundFile(this, "Timmy Trumpet  Savage.mp3");
     //musica = new SoundFile(this, "Péssimo Negócio - Dilsinho.mp3");
-    //musica = new SoundFile(this, "16 Toneladas - Noriel Vilela.mp3");
+    musica = new SoundFile(this, "16 Toneladas - Noriel Vilela.mp3");
     //musica = new SoundFile(this, "Bezerra da Silva - Sequestraram a minha sogra.mp3");
     //musica = new SoundFile(this, "Molejo - Cilada.mp3");
-    musica = new SoundFile(this, "Deixa Acontecer - Grupo Revelação - Letra.mp3");
+    //musica = new SoundFile(this, "Deixa Acontecer - Grupo Revelação - Letra.mp3");
     //musica = new SoundFile(this, "Revelação - Coração Radiante.mp3");
     
     musica.loop();
